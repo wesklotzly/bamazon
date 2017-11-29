@@ -1,0 +1,18 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "CLA to display products and have customer orders",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesklotzly/bamazon.git"
+  },
+  "homepage": "https://github.com/wesklotzly/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0",
+    "mysql": "^2.15.0"
+  }
+}
