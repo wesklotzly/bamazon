@@ -52,7 +52,7 @@ function buyProducts(products) {
     if (product) {
       getQuantity(product);
     } else {
-      console.log("The item you have chosen does not exist.");
+      console.log("The item does not exist.");
       readProducts();
     }    
   });
@@ -86,7 +86,7 @@ function getQuantity(product) {
 
     // check if quantity is available
     if (quantity > product.stock_quantity) {
-      console.log("We are sorry, but the quantity you have chosen is not available. You can buy a max of " + product.stock_quantity + " " + product.product_name + "(s).\n");
+      console.log("The quantity you have chosen is not available. We have " + product.stock_quantity + " " + product.product_name + "(s).\n" + " available.");
       readProducts();
     } else {
       updateStock(product, quantity);
@@ -97,7 +97,7 @@ function getQuantity(product) {
 function updateStock(product, quantity) {
   var newQuantity = product.stock_quantity - quantity;
   connection.query("UPDATE products SET stock_quantity = ? WHERE id = ?", [newQuantity, product.id], function(err, res) {
-    console.log("Your order of " + quantity + " " + product.product_name + "(s) has been placed successfully.\n");
+    console.log("Your order of " + quantity + " " + product.product_name + "(s) has been placed.\n");
     readProducts();
   });
 }
